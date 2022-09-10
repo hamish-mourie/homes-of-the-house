@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { getWidgets } from '../apiClient'
-import { Routes, Route } from 'react-router-dom'
+import { getMPs } from '../apiClient'
 
-import AddWidget from './AddWidget'
+import AddMP from './AddMP'
+import MPTable from './MPTable'
 
 function App() {
-  const [widgets, setWidgets] = useState([])
+  const [MPs, setMPs] = useState([])
 
-  function reloadWidgets() {
-    getWidgets()
+  function reloadMPs(sortBy) {
+    getMPs(sortBy)
       .then((result) => {
-        setWidgets(result)
+        setMPs(result)
       })
       .catch((err) => {
         console.error(err.message)
@@ -18,30 +18,20 @@ function App() {
   }
 
   useEffect(() => {
-    getWidgets()
+    getMPs('fullName')
       .then((result) => {
-        setWidgets(result)
+        setMPs(result)
       })
       .catch((err) => {
         console.error(err.message)
       })
   }, [])
+
   return (
     <div>
-      <h1>Widgets for the win!</h1>
-      <ul>
-        {widgets.map(({ id, inStock, mfg, name, price }) => {
-          return (
-            <li key={id}>
-              Product Name: {name} In stock:{inStock} Price:{price} Made by:
-              {mfg}
-            </li>
-          )
-        })}
-      </ul>
-      <Routes>
-        <Route path="/" element={<AddWidget reloadWidgets={reloadWidgets} />} />
-      </Routes>
+      <h1 className="center">Homes of the House</h1>
+      <MPTable props={{ reloadMPs, MPs }} />
+      <AddMP reloadMPs={reloadMPs} />
     </div>
   )
 }
