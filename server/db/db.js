@@ -15,11 +15,13 @@ function getMPs(sortBy, db = connection) {
       .select()
       .orderBy('mps.politicalParty', 'asc')
       .orderBy('mps.totalPropertiesOwned', 'desc')
+      .orderBy('mps.fullName', 'asc')
   } else {
     return db('mps')
       .select()
       .orderBy('mps.totalPropertiesOwned', 'desc')
       .orderBy('mps.politicalParty', 'asc')
+      .orderBy('mps.fullName', 'asc')
   }
 }
 
