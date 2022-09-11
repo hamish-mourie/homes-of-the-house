@@ -9,6 +9,12 @@ export function getMPs(sortBy) {
   })
 }
 
+export function getPartyHouses() {
+  return request.get(`/api/v1/MPs/getPartyHouses`).then((res) => {
+    return res.body
+  })
+}
+
 export function addMP(MP) {
   return request
     .post('/api/v1/MPs')

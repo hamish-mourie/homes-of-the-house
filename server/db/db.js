@@ -5,6 +5,7 @@ const connection = require('knex')(config)
 module.exports = {
   getMPs,
   addMP,
+  getPartyHouses,
 }
 
 function getMPs(sortBy, db = connection) {
@@ -23,6 +24,10 @@ function getMPs(sortBy, db = connection) {
       .orderBy('mps.politicalParty', 'asc')
       .orderBy('mps.fullName', 'asc')
   }
+}
+
+function getPartyHouses(db = connection) {
+  return db('mps').select('politicalParty', 'mps.totalPropertiesOwned')
 }
 
 function addMP(MP, db = connection) {

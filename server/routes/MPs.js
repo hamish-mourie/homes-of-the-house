@@ -3,6 +3,16 @@ const router = express.Router()
 
 const db = require('../db/db')
 
+router.get('/getPartyHouses', (req, res) => {
+  db.getPartyHouses()
+    .then((data) => {
+      res.json(data)
+    })
+    .catch((err) => {
+      res.status(500).send(err.message)
+    })
+})
+
 router.get('/:sortBy', (req, res) => {
   const { sortBy } = req.params
   db.getMPs(sortBy)
