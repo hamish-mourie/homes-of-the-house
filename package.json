@@ -13,6 +13,7 @@
     "knex": "knex --knexfile server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx ."
   },
+  "build": "webpack && knex migrate:latest",
   "babel": {
     "presets": [
       "@babel/preset-typescript",
