@@ -96,6 +96,15 @@ function App() {
   return (
     <div>
       <h1 className="center">Homes of the House</h1>
+      <h2 className="center">
+        <a
+          href="https://www.parliament.nz/en/mps-and-electorates/members-financial-interests/mps-financial-interests/2022-current-register-of-members-pecuniary-and-other-specified-interests/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Data sourced from Parliament.nz
+        </a>
+      </h2>
       {chartData !== '' && (
         <div className="center graph">
           {console.log(chartData)}
