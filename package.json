@@ -20,6 +20,9 @@
       "@babel/preset-react"
     ]
   },
+  "engines": {
+    "node": "16.x"
+  },
   "eslintConfig": {
     "extends": "eda/react",
     "ignorePatterns": [
