@@ -249,8 +249,9 @@ function App() {
                 </div>
               </div>
               <div className="split-column center">
-                <div className="two-graphs center">
-                  <h1>Properties Owned - Per Capita</h1>
+                <div className="two-graphs2 center">
+                  <h1>Properties Owned</h1>
+                  <h1>Per Capita</h1>
                   <h2>(By Party Affiliation)</h2>
                   <BarChart chartData={pieChartCapitaData} />
                 </div>

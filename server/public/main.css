@@ -7,12 +7,18 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   background-image: url("background.jpg");
   background-repeat: repeat;
+  font-family: 'Vollkorn SC';
+  font-size: 22px;
+  
+}
+
+a:visited {
+  color:rgb(180, 176, 151);
 }
 
 .wrapper {
@@ -55,23 +61,11 @@ body {
 .row.blue {
   background: #2980b9;
 }
-/* @media screen and (max-width: 580px) {
-  .row {
-    padding: 8px 0;
-    display: block;
-  }
-} */
 
 .cell {
   padding: 6px 12px;
   display: table-cell;
 }
-/* @media screen and (max-width: 580px) {
-  .cell {
-    padding: 2px 12px;
-    display: block;
-  }
-} */
 
 .center {
   text-align: center;
@@ -85,6 +79,11 @@ body {
 .two-graphs {
   margin: auto;
   width: 30vw;
+}
+
+.two-graphs2 {
+  margin: auto;
+  width: 45vw;
 }
 
 .page-wrapper {
